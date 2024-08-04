@@ -1,0 +1,75 @@
+/* src/components/Popup.css */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 800px;
+  height: 500px;
+  overflow-x: auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.comparison-table th, .comparison-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: #f4f4f4;
+}
+
+.car-image {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.toggle-diff-button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  outline:none;
+  background-color: none;
+  border: 1px solid red;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-content h2 {
+  text-align: center;
+}
+.compar_car_empty {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

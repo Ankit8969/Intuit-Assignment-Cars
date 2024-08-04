@@ -1,0 +1,78 @@
+/* src/components/CarCard.css */
+
+.car-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+}
+.car-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.car-card-content {
+  padding: 15px;
+}
+
+.car-card-name {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.car-card-brand {
+  font-size: 1em;
+  color: #555;
+  margin: 5px 0;
+}
+
+.car-card-engine {
+  font-size: 0.9em;
+  color: #777;
+  margin: 5px 0;
+}
+
+.car-card-price {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 0;
+}
+.car-card-color {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 0;
+}
+
+.card_details {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.compare_button {
+  width: 150px;
+  height: 30px;
+  background-color: skyblue;
+  border: none;
+  border-radius: 5px;
+  padding:5px;
+  font-size: 12px;
+  transition: all 0.5 ease-in-out;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.compare_button_remove {
+  background-color: rgb(0, 255, 132) !important;
+}
+.compare_button:active {
+  transform: scale(0.9);
+}
