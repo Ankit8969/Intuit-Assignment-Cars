@@ -263,3 +263,10 @@ export const CAR_LIST = [
 
 
 export const ABOUT_CAR_DETAILS = "This car is a high-performance hybrid supercar that represents pinnacle of technological and engineering advancement. Powered by a twin-turbocharged V8 engine paired with three electric motors, it delivers a combined 986 horsepower, propelling it from 0 to 60 mph in just 2.5 seconds. The SF90 features a striking design with aerodynamic enhancements, a luxurious interior, and cutting-edge technology, including advanced driver assistance systems and a sophisticated infotainment setup. Its hybrid powertrain not only provides exceptional performance but also improves fuel efficiency, making it a blend of speed, luxury, and innovation.";
+
+export const SELECT_TO_COMPARE = "Select to compare";
+export const REMOVE_TO_COMPARE = "Remove to compare";
+export const SHOW_ALL_FEATURES = "Show all features";
+export const SHOW_DIFFERENCE_FEATURES = "Show difference features";
+export const NO_DATA_URL = "https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150624582.jpg?w=1480&t=st=1722610996~exp=1722611596~hmac=a72e8248621a184be71ff203763f2cad34b2eda97651ba0911887a72cf86e39b";
+export const NO_DATA_AVAILABLE = "No data available";

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NO_DATA_AVAILABLE, NO_DATA_URL } from '../utils/cars_constants';
 
 const NoData = () => {
   const styles = {
@@ -25,11 +26,13 @@ const NoData = () => {
     <div style={styles.container}>
       <img 
         loading='lazy'
-        src="https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150624582.jpg?w=1480&t=st=1722610996~exp=1722611596~hmac=a72e8248621a184be71ff203763f2cad34b2eda97651ba0911887a72cf86e39b" 
+        src={NO_DATA_URL}
         alt="No Data"
         style={styles.image}
       />
-      <p style={styles.text}>No data available</p>
+      <p style={styles.text}>
+        {NO_DATA_AVAILABLE}
+      </p>
     </div>
   );
 };

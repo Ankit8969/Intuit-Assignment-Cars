@@ -2,7 +2,7 @@
 import React, { useState, memo } from 'react';
 import '../styles/Popup.css';
 
-const Popup = ({ isOpen, setIsPopUpOpen, compareCars }) => {
+const CarComparison = ({ isOpen, setIsPopUpOpen, compareCars }) => {
   const [showDifferences, setShowDifferences] = useState(false);
 
   if (!isOpen) return <></>;
@@ -10,7 +10,7 @@ const Popup = ({ isOpen, setIsPopUpOpen, compareCars }) => {
   if (!compareCars || compareCars.length !== 2) {
     return (
       <div className="popup-overlay">
-        <div className="popup-content">
+        <div className="popup-content popup-content-empty">
           <button className="popup-close" onClick={() => setIsPopUpOpen(false)}>X</button>
           <h2>Compare Cars</h2>
           <div className="compar_car_empty">
@@ -85,4 +85,4 @@ const Popup = ({ isOpen, setIsPopUpOpen, compareCars }) => {
   );
 };
 
-export default memo(Popup);
+export default memo(CarComparison);

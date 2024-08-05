@@ -1,16 +1,21 @@
 // src/components/CarCard.js
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../styles/CarCard.css'; // Assuming you will add some styles for the card
 import { useNavigate } from 'react-router-dom';
+import { REMOVE_TO_COMPARE, SELECT_TO_COMPARE } from '../utils/cars_constants';
+
+function isUserSelected(details, compareCars) {
+  let isSelected = false;
+  compareCars?.forEach((car) => {
+    if (parseInt(car?.id) === parseInt(details?.id))
+      isSelected = true;
+  })
+  return isSelected;
+}
 
 const CarCard = ({ details, setCompareCars, compareCars, showCompare }) => {
   const navigate = useNavigate(); // navigation hook
-  let isPresent = false;
-
-  compareCars?.forEach((car) => {
-    if (car?.id == details?.id)
-        isPresent = true;
-  })
+  const isSelected = isUserSelected(details, compareCars);
 
   const handleRedirect = (id) => {
     navigate(`/description?id=${id}`); // Perform navigation
@@ -24,18 +29,23 @@ const CarCard = ({ details, setCompareCars, compareCars, showCompare }) => {
       return ;
     }
     setCompareCars([...compareCars, detail]);
-    // You can now use the id parameter as needed
   }
 
   const handleRemoveCompare = (e, detail) => {
     e.stopPropagation();
-    const filterSelectedCar = compareCars.filter((car) => car?.id != detail?.id);
+    const filterSelectedCar = compareCars.filter((car) => parseInt(car?.id) !== parseInt(detail?.id));
     setCompareCars(filterSelectedCar);
   }
 
   return (
       <div className="car-card" onClick={()=>handleRedirect(details?.id)}>
-          <img loading="lazy" src={details?.image} alt={details.name} className="car-card-image" />
+          <img 
+            className="car-card-image" 
+            loading="lazy" 
+            aria-label={details?.name} 
+            src={details?.image} 
+            alt={details.name} 
+          />
           <div className="car-card-content">
               <h3 className="car-card-name">{details?.name}</h3>
               <div className="card_details">
@@ -47,19 +57,19 @@ const CarCard = ({ details, setCompareCars, compareCars, showCompare }) => {
               {showCompare && (
                   <div className="buttons">
                     {
-                      !isPresent ? (
+                      !isSelected ? (
                         <button 
                           className="compare_button" 
                           onClick={(event) => handleAddCompare(event, details)}
                         >
-                          Select to compare
+                          {SELECT_TO_COMPARE}
                         </button>
                       ):(
                         <button 
                           className="compare_button compare_button_remove" 
                           onClick={(event)=>handleRemoveCompare(event, details)}
                         >
-                          Remove to compare
+                          {REMOVE_TO_COMPARE}
                         </button>
                       )
                     }

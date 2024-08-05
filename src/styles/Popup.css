@@ -1,4 +1,4 @@
-/* src/components/Popup.css */
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -72,4 +72,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.popup-content-empty {
+  background-color: skyblue;
+  padding:20px;
+  border-radius: 20px;
 }

@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { CAR_LIST } from '../utils/cars_constants';
 import COMPARE_ICON from '../utils/compare-icon.png'
 import CarListing from './CarListing';
-import Popup from '../common/Popup';
+import CarComparison from '../common/CarComparison';
 
-// Pure Function
 function filteredCarsList(text) {
   const filteredArray = CAR_LIST.filter((item) => 
     item.name.toLowerCase().includes(text) ||
@@ -15,7 +14,7 @@ function filteredCarsList(text) {
   return filteredArray;
 }
 
-const CarComparison = () => {
+const CarDashboard = () => {
     const [searchText, setSearchText] = useState('');
     const [carList, setCarList] = useState(CAR_LIST);
     const [compareCars, setCompareCars] = useState([]);
@@ -52,7 +51,7 @@ const CarComparison = () => {
               />
             </div>
           </section>
-          <Popup
+          <CarComparison
             isOpen={isPopUpOpen} 
             setIsPopUpOpen={setIsPopUpOpen} 
             compareCars={compareCars} 
@@ -67,4 +66,4 @@ const CarComparison = () => {
     );
 };
 
-export default CarComparison;
+export default CarDashboard;
